@@ -1,0 +1,25 @@
+{
+    "name": "xpeedstudio/employee",
+    "autoload": {
+        "psr-4": {
+            "Modules\\": "Modules/",
+            "Xpeedstudio\\Employee\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "XpeedStudio",
+            "email": "shahin@xpeedstudio.com"
+        }
+    ],
+    "require": {
+        "nwidart/laravel-modules": "^9.0"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Xpeedstudio\\Employee\\Providers\\EmployeeProvider"
+            ]
+        }
+    }
+}
