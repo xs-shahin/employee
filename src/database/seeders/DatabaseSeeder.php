@@ -2,6 +2,10 @@
 
 namespace Xpeedstudio\Employee\Database\Seeders;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+
+
+use DepartmentSeeder;
+use EmployeeSeeder;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -13,11 +17,9 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
-
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
+        $this->call([
+            DepartmentSeeder::class,
+            EmployeeSeeder::class
+        ]);
     }
 }

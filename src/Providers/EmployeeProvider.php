@@ -3,6 +3,8 @@
 namespace Xpeedstudio\Employee\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Xpeedstudio\Employee\Commands\SeedDatabase;
+
 
 class EmployeeProvider extends ServiceProvider
 {
@@ -18,4 +20,14 @@ class EmployeeProvider extends ServiceProvider
         $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
 
     }
+
+    public function register()
+    {
+        if ($this->app->runningInConsole()) {
+            $this->commands([
+                SeedDatabase::class,
+            ]);
+        }
+    }
+
 }
